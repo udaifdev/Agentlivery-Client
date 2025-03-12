@@ -1,0 +1,95 @@
+
+body, h1, h2, h3, h4, h5, h6, p, span {
+    font-family: 'Lexend Deca'  ;
+  }
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  } */
+  
+ .fadeInUp {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  .fadeIn {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+  }
+
+  
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .animate-fadeInDelay {
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+  }
+  
+  .animate-fadeInDelayLong {
+    animation: fadeIn 0.8s ease-out 0.6s forwards;
+  }
+  
+  .animate-fadeInDelayLonger {
+    animation: fadeIn 0.8s ease-out 0.9s forwards;
+  }
+  
+  .animate-fadeInDelayLongest {
+    animation: fadeIn 0.8s ease-out 1.2s forwards;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  
+  .animate-pulse {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Fade-in Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base class - hidden by default */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Active class - fades in when visible */
+.scroll-fade.active {
+  opacity: 1;
+  transform: translateY(0);
+}
