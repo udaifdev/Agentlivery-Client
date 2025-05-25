@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Twitter, Instagram, Linkedin, Github, Mail } from 'lucide-react';
+import { Facebook, Twitter, Instagram } from 'lucide-react';
 
 interface TeamMember {
   id: number;
@@ -22,7 +22,7 @@ const Team: React.FC = () => {
       id: 1,
       name: "Ajmal Shan",
       role: "Chief Executive",
-      image: "https://thumbs.dreamstime.com/b/handsome-charismatic-emotional-man-looking-serious-dark-shado-handsome-charismatic-emotional-man-looking-serious-dark-shadow-104045869.jpg",
+      image: "/images/ajmal shan.jpg",
       socials: {
         facebook: "#",
         twitter: "#",
@@ -33,7 +33,7 @@ const Team: React.FC = () => {
       id: 2,
       name: "Muhammad Udaif",
       role: "Full Stack Developer",
-      image: "https://media.istockphoto.com/id/577634524/photo/elegant-business-man-fixing-his-collar.jpg?s=612x612&w=0&k=20&c=RtuL0MrlP0bCHUc1eqxBUEtTtjK9dqtdzhu9CmjF6JA=",
+      image: "/images/cot 1.png",
       socials: {
         facebook: "#",
         twitter: "#",
@@ -83,7 +83,7 @@ const Team: React.FC = () => {
 
   return (
     <div className="py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ const Team: React.FC = () => {
           className="text-center mb-16"
         >
           <h3 className="text-blue-600 font-bold text-xl tracking-wide uppercase mb-3">
-            Agentlivery
+            Meet Our Experts
           </h3>
           <motion.h2 
             className="text-5xl md:text-6xl font-bold text-gray-300 mb-8"
@@ -99,16 +99,18 @@ const Team: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Our Team
+            The Team Behind Agentlivery
           </motion.h2>
-          <p className="max-w-3xl mx-auto text-xl text-gray-400">
-            Praesent libero augue ornare eget quam sed, volutpat suscipit arcu
-            duis ut urna commodo commodo tellusac.  
+          <p className="max-w-3xl mx-auto text-xl text-gray-400 mb-4">
+            Our dedicated team combines years of industry expertise with innovative thinking to deliver exceptional results for our clients.
+          </p>
+          <p className="max-w-3xl mx-auto text-lg text-gray-400">
+            Each member brings unique skills and perspectives to the table, working collaboratively to build solutions that transform how businesses connect with their customers. With backgrounds spanning technology, design, and business strategy, we're equipped to tackle your most complex challenges.
           </p>
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -118,23 +120,23 @@ const Team: React.FC = () => {
               key={member.id}
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 max-w-xs mx-auto"
             >
-              <div className="overflow-hidden">
+              <div className="overflow-hidden h-78 w-full">
                 <motion.img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-90 object-cover object-center"
+                  className="w-full h-full object-cover object-center filter grayscale brightness-78 contrast-155"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4 }}
                 />
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-gray-600 mb-6">{member.role}</p>
+              <div className="p-5 text-center">
+                <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                <p className="text-gray-600 mb-4">{member.role}</p>
                 
                 <motion.div 
-                  className="flex justify-center space-x-4"
+                  className="flex justify-center space-x-3"
                   initial="hidden"
                   animate="visible"
                   transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
@@ -144,9 +146,9 @@ const Team: React.FC = () => {
                       href={member.socials.facebook}
                       variants={socialIconVariants}
                       whileHover="hover"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-colors duration-300"
+                      className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-colors duration-300"
                     >
-                      <Facebook size={18} />
+                      <Facebook size={16} />
                     </motion.a>
                   )}
                   
@@ -155,9 +157,9 @@ const Team: React.FC = () => {
                       href={member.socials.twitter}
                       variants={socialIconVariants}
                       whileHover="hover"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-400 hover:text-white transition-colors duration-300"
+                      className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-400 hover:text-white transition-colors duration-300"
                     >
-                      <Twitter size={18} />
+                      <Twitter size={16} />
                     </motion.a>
                   )}
                   
@@ -166,9 +168,9 @@ const Team: React.FC = () => {
                       href={member.socials.instagram}
                       variants={socialIconVariants}
                       whileHover="hover"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-gradient-to-r from-purple-500 to-pink-500 hover:text-white transition-colors duration-300"
+                      className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-gradient-to-r from-purple-500 to-pink-500 hover:text-white transition-colors duration-300"
                     >
-                      <Instagram size={18} />
+                      <Instagram size={16} />
                     </motion.a>
                   )}
                 </motion.div>

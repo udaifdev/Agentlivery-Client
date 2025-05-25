@@ -188,7 +188,7 @@ const Contact: React.FC = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${errors.name ? "border-red-500" : "border-gray-200"
+                  className={`w-full text-gray-800 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${errors.name ? "border-red-500" : "border-gray-200"
                     }`}
                   placeholder="John Doe"
                 />
@@ -205,7 +205,7 @@ const Contact: React.FC = () => {
                   name="organization"
                   value={formData.organization}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full  text-gray-800 px-4 py-2 border border-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Your Company"
                 />
               </div>
@@ -220,7 +220,7 @@ const Contact: React.FC = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${errors.email ? "border-red-500" : "border-gray-200"
+                  className={`w-full  text-gray-800 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${errors.email ? "border-red-500" : "border-gray-200"
                     }`}
                   placeholder="john@example.com"
                 />
@@ -237,7 +237,7 @@ const Contact: React.FC = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${errors.phone ? "border-red-500" : "border-gray-200"
+                  className={`w-full  text-gray-800 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${errors.phone ? "border-red-500" : "border-gray-200"
                     }`}
                   placeholder="+1 (123) 456-7890"
                 />
@@ -254,7 +254,7 @@ const Contact: React.FC = () => {
                   name="website"
                   value={formData.website}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${errors.website ? "border-red-500" : "border-gray-200"
+                  className={`w-full  text-gray-800 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${errors.website ? "border-red-500" : "border-gray-200"
                     }`}
                   placeholder="https://example.com"
                 />
@@ -271,7 +271,7 @@ const Contact: React.FC = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${errors.message ? "border-red-500" : "border-gray-300"
+                  className={`w-full  text-gray-800 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${errors.message ? "border-red-500" : "border-gray-300"
                     }`}
                   placeholder="How can we help you?"
                 />
