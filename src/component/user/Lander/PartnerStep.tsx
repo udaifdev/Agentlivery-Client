@@ -38,7 +38,7 @@ const PartnerStep = () => {
   return (
     <motion.div
       ref={sectionRef}
-      style={{ opacity, scale }}
+      style={{ opacity, scale }as any}
       className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black to-teal-900 text-white p-4 py-8 sm:py-16"
     >
       <motion.h1
@@ -52,7 +52,7 @@ const PartnerStep = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl w-full mx-auto px-4">
         {/* Consultation Card */}
         <motion.div
-          style={{ y: cardOneY, opacity: cardOneOpacity }}
+          style={{ y: cardOneY, opacity: cardOneOpacity }as any}
           className="bg-gray-900 rounded-lg p-4 sm:p-6 flex flex-col items-center min-h-0"
         >
           <div className="bg-teal-700 p-3 sm:p-4 rounded-md mb-4 sm:mb-6 flex-shrink-0">
@@ -71,7 +71,7 @@ const PartnerStep = () => {
 
         {/* Design & Development Card */}
         <motion.div
-          style={{ y: cardTwoY, opacity: cardTwoOpacity }}
+          style={{ y: cardTwoY, opacity: cardTwoOpacity }as any}
           className="bg-gray-900 rounded-lg p-4 sm:p-6 flex flex-col items-center min-h-0"
         >
           <div className="bg-teal-700 p-3 sm:p-4 rounded-md mb-4 sm:mb-6 relative flex-shrink-0">
@@ -90,7 +90,7 @@ const PartnerStep = () => {
 
         {/* Review & Launch Card */}
         <motion.div
-          style={{ y: cardThreeY, opacity: cardThreeOpacity }}
+          style={{ y: cardThreeY, opacity: cardThreeOpacity }as any}
           className="bg-gray-900 rounded-lg p-4 sm:p-6 flex flex-col items-center min-h-0"
         >
           <div className="bg-teal-700 p-3 sm:p-4 rounded-md mb-4 sm:mb-6 flex-shrink-0">
