@@ -82,7 +82,9 @@ const Contact: React.FC = () => {
         );
 
         console.log("Email sent successfully...............", result.text);
-        toast.success("Your message has been sent successfully!");
+        toast.success("Your message has been sent successfully!", {
+          position: "top-center",
+        });
 
         // Reset form after successful submission
         setFormData({
@@ -95,12 +97,16 @@ const Contact: React.FC = () => {
         });
       } catch (error) {
         console.error("Email sending failed...........", error);
-        toast.error("Failed to send message. Please try again later.");
+        toast.error("Failed to send message. Please try again later.", {
+          position: "top-center",
+        });
       } finally {
         setIsSubmitting(false);
       }
     } else {
-      toast.error("Please fix the errors in the form");
+      toast.error("Please fix the errors in the form", {
+          position: "top-center",
+        });
     }
   };
 
@@ -163,8 +169,8 @@ const Contact: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">E-mail Us</h3>
               <div className="space-y-2 text-gray-600">
-                <p>info@yourdomain.com</p>
-                <p>hr@yourdomain.com</p>
+                <p>info@agentlivery.com</p>
+                {/* <p>hr@yourdomain.com</p> */}
               </div>
             </div>
           </motion.div>

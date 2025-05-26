@@ -1,50 +1,13 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
+
 
 const ServiceSection = () => {
   const sectionRef = useRef(null);
-
-  // Advanced scroll animations using useScroll hook
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
+  const isInView = useInView(sectionRef, { 
+    margin: "-100px" // Trigger when section is 100px from viewport
   });
-
-  // Create smooth scrollYProgress with spring physics
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 120,
-    damping: 25,
-    restDelta: 0.001
-  });
-
-  // Header animations
-  const headerOpacity = useTransform(smoothProgress, [0, 0.2], [0, 1]);
-  const headerY = useTransform(smoothProgress, [0, 0.2], [80, 0]);
-  const headerScale = useTransform(smoothProgress, [0, 0.2], [0.8, 1]);
-
-  // Left-to-right slide animations for service cards
-  const serviceOneX = useTransform(smoothProgress, [0.15, 0.45], [-300, 0]);
-  const serviceTwoX = useTransform(smoothProgress, [0.25, 0.55], [-300, 0]);
-  const serviceThreeX = useTransform(smoothProgress, [0.35, 0.65], [-300, 0]);
-  const serviceFourX = useTransform(smoothProgress, [0.45, 0.75], [-300, 0]);
-
-  // Staggered opacity for service cards
-  const serviceOneOpacity = useTransform(smoothProgress, [0.15, 0.45], [0, 1]);
-  const serviceTwoOpacity = useTransform(smoothProgress, [0.25, 0.55], [0, 1]);
-  const serviceThreeOpacity = useTransform(smoothProgress, [0.35, 0.65], [0, 1]);
-  const serviceFourOpacity = useTransform(smoothProgress, [0.45, 0.75], [0, 1]);
-
-  // Rotation effects for dynamic movement
-  const serviceOneRotate = useTransform(smoothProgress, [0.15, 0.45], [-15, 0]);
-  const serviceTwoRotate = useTransform(smoothProgress, [0.25, 0.55], [-15, 0]);
-  const serviceThreeRotate = useTransform(smoothProgress, [0.35, 0.65], [-15, 0]);
-  const serviceFourRotate = useTransform(smoothProgress, [0.45, 0.75], [-15, 0]);
-
-  // Scale animations for each service
-  const serviceOneScale = useTransform(smoothProgress, [0.15, 0.45], [0.85, 1]);
-  const serviceTwoScale = useTransform(smoothProgress, [0.25, 0.55], [0.85, 1]);
-  const serviceThreeScale = useTransform(smoothProgress, [0.35, 0.65], [0.85, 1]);
-  const serviceFourScale = useTransform(smoothProgress, [0.45, 0.75], [0.85, 1]);
 
   const services = [
     {
@@ -93,27 +56,89 @@ const ServiceSection = () => {
     }
   ];
 
-  const animations = [
-    { x: serviceOneX, opacity: serviceOneOpacity, rotate: serviceOneRotate, scale: serviceOneScale },
-    { x: serviceTwoX, opacity: serviceTwoOpacity, rotate: serviceTwoRotate, scale: serviceTwoScale },
-    { x: serviceThreeX, opacity: serviceThreeOpacity, rotate: serviceThreeRotate, scale: serviceThreeScale },
-    { x: serviceFourX, opacity: serviceFourOpacity, rotate: serviceFourRotate, scale: serviceFourScale }
-  ];
+  // Animation variants for header
+  const headerVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 60, 
+      scale: 0.9 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: {
+        duration: 1.2,
+        ease: [0.25, 0.46, 0.45, 0.94], // Custom cubic-bezier for smooth ease
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+
+  // Animation variants for service cards
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      x: -200, 
+      rotate: -8, 
+      scale: 0.9 
+    },
+    visible: (index:any) => ({
+      opacity: 1,
+      x: 0,
+      rotate: 0,
+      scale: 1,
+      transition: {
+        duration: 1,
+        delay: 0.2 + index * 0.15, // Smoother stagger
+        ease: [0.25, 0.46, 0.45, 0.94],
+        type: "spring",
+        stiffness: 120,
+        damping: 20
+      }
+    })
+  };
+
+  // Animation variants for CTA button
+  const ctaVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 40,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 1,
+        delay: 1, // Delay after cards
+        ease: [0.25, 0.46, 0.45, 0.94],
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
 
   return (
     <div ref={sectionRef} className="min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900 text-white py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div 
-          style={{ opacity: headerOpacity, y: headerY, scale: headerScale }}
+          variants={headerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
           className="text-center mb-16 sm:mb-20"
         >
-          <motion.h2 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             Our Project
-          </motion.h2>
-          <motion.p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          </h2>
+          <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Comprehensive solutions designed to elevate your digital presence and drive business growth
-          </motion.p>
+          </p>
         </motion.div>
 
         {/* Services Grid */}
@@ -121,21 +146,23 @@ const ServiceSection = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              style={{
-                x: animations[index].x,
-                opacity: animations[index].opacity,
-                rotate: animations[index].rotate,
-                scale: animations[index].scale
-              }}
+              variants={cardVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              custom={index}
               className="group relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl -z-10"
                    style={{background: `linear-gradient(135deg, ${service.gradient.includes('blue') ? '#3B82F6, #8B5CF6' : service.gradient.includes('green') ? '#10B981, #14B8A6' : service.gradient.includes('pink') ? '#EC4899, #F43F5E' : '#EA580C, #EF4444'})`}} />
               
-              <div className="bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-500 group-hover:transform group-hover:scale-105">
-                <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${service.gradient} mb-6 shadow-lg`}>
+              <div className="bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-700 group-hover:transform group-hover:scale-105 group-hover:shadow-2xl">
+                <motion.div 
+                  className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${service.gradient} mb-6 shadow-lg`}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
                   {service.icon}
-                </div>
+                </motion.div>
                 
                 <h3 className="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-300">
                   {service.title}
@@ -154,19 +181,20 @@ const ServiceSection = () => {
 
         {/* Call to Action */}
         <motion.div 
-          style={{ 
-            opacity: useTransform(smoothProgress, [0.7, 0.9], [0, 1]),
-            y: useTransform(smoothProgress, [0.7, 0.9], [50, 0])
-          }}
+          variants={ctaVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
           className="text-center mt-16 sm:mt-20"
         >
+          <Link to={'/contact'}>
           <motion.button 
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-dark-600 to-white-600 hover:from-white-700 hover:to-teal-700 text-white font-bold py-4 px-8 sm:px-12 rounded-full text-lg sm:text-xl shadow-2xl transition-all duration-300 hover:shadow-purple-500/25"
-          >
+            className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white font-bold py-4 px-8 sm:px-12 rounded-full text-lg sm:text-xl shadow-2xl transition-all duration-300 hover:shadow-blue-500/25"
+            >
             Start Your Project
           </motion.button>
+              </Link>
         </motion.div>
       </div>
     </div>
