@@ -48,9 +48,8 @@ const Header: React.FC = () => {
     return (
         <header
             className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-500 
-            bg-gradient-to-r from-white to-teal-900 backdrop-blur-sm
-            ${isScrolled ? 'shadow-lg' : ''}`}
-        >
+            backdrop-blur-md ${isScrolled ? 'shadow-lg' : ''}`}   >
+            {/* bg-gradient-to-r from-white to-teal-900 */}
             <div className="absolute inset-0 overflow-hidden">
                 {/* Green wave background effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-teal-700 backdrop-blur-sm"></div>
@@ -126,8 +125,8 @@ const Header: React.FC = () => {
                     </div>
 
                     {/* Mobile menu button with glass effect */}
-                    <button 
-                        onClick={toggleMenu} 
+                    <button
+                        onClick={toggleMenu}
                         className="md:hidden bg-white/10 backdrop-blur-md p-2 rounded-lg border border-white/20"
                         aria-label="Toggle menu"
                     >

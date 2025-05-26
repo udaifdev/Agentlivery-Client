@@ -4,6 +4,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import LandService from './LandService';
 import PartnerStep from './PartnerStep';
 import { Link } from 'react-router-dom';
+import ServicesSection from './ServiceSection';
 
 // Props for the ErrorBoundary component
 interface ErrorBoundaryProps {
@@ -200,6 +201,7 @@ const Land: React.FC = () => {
       <div className="overflow-x-hidden">
         <LandService />
         <PartnerStep />
+        <ServicesSection/>
       </div>
     </div>
   );
