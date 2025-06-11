@@ -33,16 +33,14 @@ The real magic happens when your team is freed from mundane tasks. Employees can
         },
         {
             id: 3,
-            title: "CHATBOT DEVELOPMENT",
+            title: "AI AGENT DEVELOPMENT",
             background: "bg-gradient-to-br from-green-700 to-green-950",
             lottieUrl: "https://lottie.host/b1eeb668-9d92-4c25-a6dc-d22834b53dd4/VM0V6okP0A.lottie",
-            description: `Our Chatbot Integration service brings intelligent, conversational AI to your customer service and internal operations. Rather than basic script-following bots, we develop sophisticated virtual assistants that understand natural language, recognize user intent, and provide helpful, contextually appropriate responses.
+            description: `Our AI Agent Development service empowers your business by deploying intelligent, autonomous agents that think, learn, and act on your behalf. We begin by identifying repetitive tasks, decision points, and customer interactions that can be enhanced or fully handled by AI. From there, we build custom-trained agents that operate across your digital ecosystem—whether it’s managing support tickets, qualifying leads, automating follow-ups, or executing backend operations.
 
-We design these chatbots to match your brand voice and deploy them across multiple channels – your website, mobile app, social platforms, and messaging services – creating consistent customer experiences everywhere. Each chatbot is trained on your specific business knowledge, industry terminology, product details, and common customer scenarios.
+These agents go beyond basic automation by using natural language processing, decision logic, and contextual memory to perform complex workflows without constant human supervision. Integrated seamlessly with your existing tools—like CRMs, messaging platforms, and internal databases—our AI agents deliver consistent performance 24/7, handling tasks in real-time with speed and accuracy.
 
-These AI assistants can handle multiple conversations simultaneously, providing instant responses to frequently asked questions, troubleshooting common issues, collecting customer information, scheduling appointments, and seamlessly transferring to human agents when necessary. Behind the scenes, they gather valuable insights about customer needs and pain points, helping you continuously improve your products and services.
-
-The real power comes from integration – your chatbot doesn't exist in isolation but connects with your CRM, knowledge base, inventory system, and other business tools to provide personalized, data-driven responses that reflect each customer's history and current situation.`
+Over time, they learn from interactions, improve responses, and adapt to evolving business needs—creating a self-improving system that scales effortlessly with your operations. The result? Your team is free to focus on high-level strategic initiatives while AI agents handle the rest. Expect measurable gains in productivity, reduced operational costs, faster execution, and dramatically improved customer experience.`
         },
     ];
 

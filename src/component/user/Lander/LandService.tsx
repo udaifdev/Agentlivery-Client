@@ -166,139 +166,133 @@ const LandService: React.FC = () => {
                 </motion.div>
 
                 {/* Service Cards with stagger animation */}
-                <Link to={'/services'}> 
-                <motion.div
-                    variants={staggerChildren}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: false, amount: 0.2 }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 hover:cursor-pointer">
-
-                    {/* Card 1 - Autonomous Agent Development */}
+                <Link to={'/services'}>
                     <motion.div
-                        variants={fadeIn('right', 0.1)}
-                        whileHover={{ scale: 1.05, y: -10 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                        className="bg-gray-200 rounded-xl p-8 relative overflow-hidden shadow-md group">
-                        <div className="absolute top-4 right-4 flex items-center">
-                            <motion.div
-                                whileHover={{ scale: 1.2 }}
-                                className="h-6 w-6 rounded-full border-2 border-emerald-500 flex items-center justify-center">
-                                <motion.div
-                                    animate={{ scale: [1, 1.5, 1] }}
-                                    transition={{ duration: 2, repeat: Infinity }}
-                                    className="h-2 w-2 bg-emerald-500 rounded-full"></motion.div>
-                            </motion.div>
-                        </div>
+                        variants={staggerChildren}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: false, amount: 0.2 }}
+                        className="grid grid-cols-1 md:grid-cols-3 gap-6 hover:cursor-pointer">
 
-                        <h3 className="text-emerald-500 text-2xl font-bold mb-4">WORKFLOW  AUTOMATION</h3>
-
+                        {/* Card 1 - Autonomous Agent Development */}
                         <motion.div
-                            variants={staggerChildren}
-                            className="mt-16 grid grid-cols-1 gap-4">
+                            variants={fadeIn('right', 0.1)}
+                            whileHover={{ scale: 1.05, y: -10 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            className="bg-gray-200 rounded-xl p-8 relative overflow-hidden shadow-md group">
+                            <div className="absolute top-4 right-4 flex items-center">
+                                <motion.div
+                                    whileHover={{ scale: 1.2 }}
+                                    className="h-6 w-6 rounded-full border-2 border-emerald-500 flex items-center justify-center">
+                                    <motion.div
+                                        animate={{ scale: [1, 1.5, 1] }}
+                                        transition={{ duration: 2, repeat: Infinity }}
+                                        className="h-2 w-2 bg-emerald-500 rounded-full"></motion.div>
+                                </motion.div>
+                            </div>
+
+                            <h3 className="text-emerald-500 text-2xl font-bold mb-4">WORKFLOW  AUTOMATION</h3>
+
                             <motion.div
-                                whileHover={{ y: -5, backgroundColor: "#f8fdfb", borderColor: "#10b981" }}
-                                className="bg-white rounded-md p-3 text-md text-gray-700 border border-gray-200 transition-all duration-300 hover:shadow-md">
-                                Workflow Automation
-                                Eliminate repetitive tasks and integrate your existing tools seamlessly with AI-driven automation.
-                                From data processing to email sequences, we help you work smarter, not harder.
+                                variants={staggerChildren}
+                                className="mt-16 grid grid-cols-1 gap-4">
+                                <motion.div
+                                    whileHover={{ y: -5, backgroundColor: "#f8fdfb", borderColor: "#10b981" }}
+                                    className="bg-white rounded-md p-3 text-md text-gray-700 border border-gray-200 transition-all duration-300 hover:shadow-md">
+                                    We eliminate repetitive tasks by integrating powerful AI tools into your daily operations. From lead generation to data entry, follow-ups to reporting — we automate it all, so your team can focus on what really matters: growth, innovation, and customer experience.
+                                </motion.div>
+                                <button className='bg-gray-700 text-white rounded-md p-2'>for more</button>
                             </motion.div>
-                            <button className='bg-gray-700 text-white rounded-md p-2'>for more</button>
+
+                            <motion.div
+                                initial={{ scale: 0.8, opacity: 0.2 }}
+                                whileHover={{ scale: 1.2, opacity: 0.4, rotate: 45 }}
+                                transition={{ duration: 0.5 }}
+                                className="absolute -bottom-24 -right-24 h-48 w-48 rounded-full bg-emerald-50"></motion.div>
                         </motion.div>
 
+                        {/* Card 2 - Enterprise Consulting */}
                         <motion.div
-                            initial={{ scale: 0.8, opacity: 0.2 }}
-                            whileHover={{ scale: 1.2, opacity: 0.4, rotate: 45 }}
-                            transition={{ duration: 0.5 }}
-                            className="absolute -bottom-24 -right-24 h-48 w-48 rounded-full bg-emerald-50"></motion.div>
-                    </motion.div>
-
-                    {/* Card 2 - Enterprise Consulting */}
-                    <motion.div
-                        variants={fadeIn('up', 0.2)}
-                        whileHover={{ scale: 1.05, y: -10 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                        className="bg-black rounded-xl p-8 relative overflow-hidden shadow-md group">
-                        <div className="absolute top-4 right-4 flex items-center">
-                            <motion.div
-                                whileHover={{ scale: 1.2 }}
-                                className="h-6 w-6 rounded-full border-2 border-emerald-500 flex items-center justify-center">
+                            variants={fadeIn('up', 0.2)}
+                            whileHover={{ scale: 1.05, y: -10 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            className="bg-black rounded-xl p-8 relative overflow-hidden shadow-md group">
+                            <div className="absolute top-4 right-4 flex items-center">
                                 <motion.div
-                                    animate={{ scale: [1, 1.5, 1] }}
-                                    transition={{ duration: 2, repeat: Infinity }}
-                                    className="h-2 w-2 bg-emerald-500 rounded-full"></motion.div>
-                            </motion.div>
-                        </div>
+                                    whileHover={{ scale: 1.2 }}
+                                    className="h-6 w-6 rounded-full border-2 border-emerald-500 flex items-center justify-center">
+                                    <motion.div
+                                        animate={{ scale: [1, 1.5, 1] }}
+                                        transition={{ duration: 2, repeat: Infinity }}
+                                        className="h-2 w-2 bg-emerald-500 rounded-full"></motion.div>
+                                </motion.div>
+                            </div>
 
-                        <h3 className="text-white text-2xl font-bold mb-16">ENTERPRISE CONSULTING</h3>
+                            <h3 className="text-white text-2xl font-bold mb-16">ENTERPRISE CONSULTING</h3>
 
-                        <motion.div
-                            variants={staggerChildren}
-                            className="mt-4 flex flex-col space-y-4">
                             <motion.div
-                                whileHover={{ x: 5, backgroundColor: "#111", borderColor: "#10b981" }}
-                                className="border border-gray-700 rounded-md p-3 text-sm text-gray-300 transition-all duration-300 hover:shadow-emerald-900 hover:shadow-md">
-                                Enterprise consulting helps businesses optimize operations, implement technology solutions,
-                                and drive strategic growth. We provide expert guidance on digital transformation, process improvement,
-                                and organizational efficiency. Unlock your company’s full potential with tailored solutions for long-term success.
+                                variants={staggerChildren}
+                                className="mt-4 flex flex-col space-y-4">
+                                <motion.div
+                                    whileHover={{ x: 5, backgroundColor: "#111", borderColor: "#10b981" }}
+                                    className="border border-gray-700 rounded-md p-3 text-sm text-gray-300 transition-all duration-300 hover:shadow-emerald-900 hover:shadow-md">
+                                    Not sure how AI fits into your business? We audit your current workflows and design a custom AI roadmap to reduce inefficiencies, cut costs, and uncover hidden growth opportunities. We speak business first, and tech second — so it all makes sense to you.
+                                </motion.div>
+                                <button className='bg-gray-700 text-white rounded-md p-2'>for more</button>
                             </motion.div>
-                            <button className='bg-gray-700 text-white rounded-md p-2'>for more</button>
+
+                            <motion.div
+                                initial={{ scale: 0.8, opacity: 0.3 }}
+                                whileHover={{ scale: 1.5, opacity: 0.6 }}
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                                className="absolute -top-20 right-20 h-40 w-40 rounded-full bg-gray-800"></motion.div>
                         </motion.div>
 
+                        {/* Card 3 - Chatbot Development */}
                         <motion.div
-                            initial={{ scale: 0.8, opacity: 0.3 }}
-                            whileHover={{ scale: 1.5, opacity: 0.6 }}
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                            className="absolute -top-20 right-20 h-40 w-40 rounded-full bg-gray-800"></motion.div>
-                    </motion.div>
-
-                    {/* Card 3 - Chatbot Development */}
-                    <motion.div
-                        variants={fadeIn('left', 0.3)}
-                        whileHover={{ scale: 1.05, y: -10 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                        className="bg-emerald-900 rounded-xl p-8 relative overflow-hidden shadow-md group">
-                        <div className="absolute top-4 right-4 flex items-center">
-                            <motion.div
-                                whileHover={{ scale: 1.2 }}
-                                className="h-6 w-6 rounded-full border-2 border-emerald-300 flex items-center justify-center">
+                            variants={fadeIn('left', 0.3)}
+                            whileHover={{ scale: 1.05, y: -10 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            className="bg-emerald-900 rounded-xl p-8 relative overflow-hidden shadow-md group">
+                            <div className="absolute top-4 right-4 flex items-center">
                                 <motion.div
-                                    animate={{ scale: [1, 1.5, 1] }}
-                                    transition={{ duration: 2, repeat: Infinity }}
-                                    className="h-2 w-2 bg-emerald-300 rounded-full"></motion.div>
-                            </motion.div>
-                        </div>
+                                    whileHover={{ scale: 1.2 }}
+                                    className="h-6 w-6 rounded-full border-2 border-emerald-300 flex items-center justify-center">
+                                    <motion.div
+                                        animate={{ scale: [1, 1.5, 1] }}
+                                        transition={{ duration: 2, repeat: Infinity }}
+                                        className="h-2 w-2 bg-emerald-300 rounded-full"></motion.div>
+                                </motion.div>
+                            </div>
 
-                        <h3 className="text-white text-2xl font-bold mb-16">CHATBOT DEVELOPMENT</h3>
+                            <h3 className="text-white text-2xl font-bold mb-16">AI AGENT DEVELOPMENT</h3>
 
-                        <motion.div
-                            variants={staggerChildren}
-                            className="mt-4 flex flex-col space-y-4">
                             <motion.div
-                                whileHover={{ x: -5, backgroundColor: "#064e3b", borderColor: "#6ee7b7" }}
-                                className="border border-emerald-700 rounded-md p-3 text-sm text-emerald-100 transition-all duration-300 hover:shadow-emerald-950 hover:shadow-md">
-                                Chatbot development creates intelligent, automated assistants to enhance customer engagement and streamline operations.
-                                We design AI-powered chatbots for seamless interactions across websites, apps,
-                                and messaging platforms. Improve efficiency and customer experience with smart, conversational solutions.
+                                variants={staggerChildren}
+                                className="mt-4 flex flex-col space-y-4">
+                                <motion.div
+                                    whileHover={{ x: -5, backgroundColor: "#064e3b", borderColor: "#6ee7b7" }}
+                                    className="border border-emerald-700 rounded-md p-3 text-sm text-emerald-100 transition-all duration-300 hover:shadow-emerald-950 hover:shadow-md">
+                                    We build intelligent agents that think, learn, and act on your behalf. Whether it’s handling customer queries, managing backend operations, or automating decision-making — our AI agents operate 24/7 with zero burnout and maximum precision
+                                </motion.div>
+                                <button className='bg-gray-700 text-white rounded-md p-2'>for more</button>
                             </motion.div>
-                            <button className='bg-gray-700 text-white rounded-md p-2'>for more</button>
-                        </motion.div>
 
-                        <motion.div
-                            initial={{ opacity: 0.3, rotate: 0 }}
-                            whileHover={{ opacity: 0.6, rotate: 45, scale: 1.2 }}
-                            animate={{
-                                y: [0, 10, 0],
-                                rotate: [0, 10, 0]
-                            }}
-                            transition={{
-                                y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                                rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" }
-                            }}
-                            className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-emerald-800"></motion.div>
+                            <motion.div
+                                initial={{ opacity: 0.3, rotate: 0 }}
+                                whileHover={{ opacity: 0.6, rotate: 45, scale: 1.2 }}
+                                animate={{
+                                    y: [0, 10, 0],
+                                    rotate: [0, 10, 0]
+                                }}
+                                transition={{
+                                    y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                                    rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+                                }}
+                                className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-emerald-800"></motion.div>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
                 </Link>
             </motion.div>
         </div>
